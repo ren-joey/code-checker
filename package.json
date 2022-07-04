@@ -1,0 +1,25 @@
+{
+  "name": "code-checker-j",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ren-joey/code-checker-j.git"
+  },
+  "keywords": [
+    "eslint",
+    "code check"
+  ],
+  "author": "Joey Ren",
+  "bugs": {
+    "url": "https://github.com/ren-joey/code-checker-j/issues"
+  },
+  "bin": {
+    "code-checker": "bin/index.js"
+  },
+  "homepage": "https://github.com/ren-joey/code-checker-j#readme"
+}
