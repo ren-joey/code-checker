@@ -1,33 +1,44 @@
 {
-  "name": "code-checker-j",
-  "version": "1.0.0",
-  "description": "",
-  "main": "bin/index.js",
-  "scripts": {
-    "test": "node ./bin/index"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/ren-joey/code-checker-j.git"
-  },
-  "keywords": [
-    "eslint",
-    "code check"
-  ],
-  "author": "Joey Ren",
-  "bugs": {
-    "url": "https://github.com/ren-joey/code-checker-j/issues"
-  },
-  "bin": {
-    "code-checker": "bin/index.js"
-  },
-  "homepage": "https://github.com/ren-joey/code-checker-j#readme",
-  "devDependencies": {
-    "chalk": "^4.0.1",
-    "is-image": "^3.0.0",
-    "readline": "^1.3.0",
-    "recursive-readdir": "^2.2.2",
-    "v8-compile-cache": "^2.3.0"
-  },
-  "dependencies": {}
+    "author": "Joey Ren",
+    "bin": {
+        "code-checker": "bin/index.js"
+    },
+    "bugs": {
+        "url": "https://github.com/ren-joey/code-checker-j/issues"
+    },
+    "dependencies": {
+        "chalk": "^4.0.1",
+        "is-image": "^3.0.0",
+        "readline": "^1.3.0",
+        "recursive-readdir": "^2.2.2",
+        "v8-compile-cache": "^2.3.0"
+    },
+    "description": "",
+    "devDependencies": {},
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "files": [
+        "bin",
+        "config",
+        "scripts"
+    ],
+    "homepage": "https://github.com/ren-joey/code-checker-j#readme",
+    "license": "MIT",
+    "name": "code-checker-j",
+    "optionalDependencies": {},
+    "peerDependencies": {},
+    "scripts": {
+        "test": "node ./bin/index"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/ren-joey/code-checker-j.git"
+    },
+    "keywords": [
+        "eslint",
+        "rules",
+        "code check"
+    ],
+    "version": "0.0.0"
 }

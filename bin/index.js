@@ -7,9 +7,9 @@ process.env.NODE_ENV = 'production';
 
 require('v8-compile-cache');
 const chalk = require('chalk');
-const checkRule = require('../colorfulChecker/checkRules');
-const checkTags = require('../colorfulChecker/checkTags');
-const checkConfig = require('../colorfulChecker/checkConfig');
+const checkRule = require('../scripts/checkRules');
+const checkTags = require('../scripts/checkTags');
+const checkConfig = require('../scripts/checkConfig');
 
 (async function main() {
     const config = checkConfig();

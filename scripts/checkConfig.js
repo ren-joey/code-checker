@@ -3,7 +3,7 @@
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
-const sampleConfigPath = path.join(__dirname, '..', 'code-checker.sample.js');
+const sampleConfigPath = path.join(__dirname, '..', 'config', 'code-checker.sample.js');
 let config = require(sampleConfigPath);
 
 const checkConfigConsole = chalk.white(
