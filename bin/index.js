@@ -12,18 +12,13 @@ const checkTags = require('../colorfulChecker/checkTags');
 const checkConfig = require('../colorfulChecker/checkConfig');
 
 (async function main() {
-
-    // process.stdin
-    //         .setEncoding("utf8")
-    //         .on("error", reject);
-
     const config = checkConfig();
 
     console.log(chalk.bold('\n🔍 Checking .eslintrc configuration:'));
-    checkRule(config.error_rules);
-    console.log(chalk.green('✅ .eslintrc configuration correct.\n'));
+    const ruleRes = checkRule(config.error_rules);
+    if (ruleRes) console.log(chalk.green('✅ .eslintrc configuration correct.\n'));
 
     console.log(chalk.bold('\n🔍 Checking development tags:'));
-    await checkTags(config.invalid_tags);
-    console.log(chalk.green('\n✅ No any invalid identifier was found\n'));
+    const tagRes = await checkTags(config.invalid_tags);
+    if (tagRes) console.log(chalk.green('\n✅ No any invalid identifier was found\n'));
 })();
