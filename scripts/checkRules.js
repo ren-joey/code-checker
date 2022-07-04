@@ -1,9 +1,12 @@
 const chalk = require('chalk');
+const path = require('path');
 const fs = require('fs');
 
 module.exports = function checkRules(rules) {
-    if (fs.existsSync('./eslintrc.js')) {
-        const eslintrc = require('./eslintrc.js');
+    const lintPath = path.join(process.cwd(), '.eslintrc.js');
+
+    if (fs.existsSync(lintPath)) {
+        const eslintrc = require(lintPath);
 
         for (let i = 0; i < rules.length; i++) {
             const rule = rules[i];
