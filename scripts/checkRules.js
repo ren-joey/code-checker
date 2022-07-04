@@ -24,9 +24,9 @@ module.exports = function checkRules(config) {
                 );
                 process.exit(1);
             }
-
-            return true;
         }
+
+        return true;
     } else {
         console.log(
             chalk.yellow('.eslintrc.js wasn\'t exist.\n'),
