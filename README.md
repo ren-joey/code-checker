@@ -1,10 +1,10 @@
 # ESLINT 設定及關鍵字檢查工具
 
-## 什麼情況需要 code-checker-j
+## 什麼情況需要 code-checker
 1. 你正在開發 **前端應用** 且使用 **eslint** 進行代碼驗證
 2. 你有在使用至少一個以上的開發用註記，如 `TODO`
 
-## code-checker-j 能做什麼
+## code-checker 能做什麼
 1. 協助確認組織規定好的 eslint 規範是否在 production 模式被設定妥善，避免不應該出現的代碼被 build 出來。 **換句話說，應該要彈 error 的 rules 不能被關掉！**
 2. 檢查代碼中不允許出現在正式環境的 tag 或關鍵字，常見的有 `TODO`、`DEV`、`eslint-disable`
 3. 你可以將 code-checker 設定在 github action 來確保 PR 被 merge 前都符合以上條件
@@ -12,7 +12,7 @@
 ## 如何安裝
 1. 在前端應用透過 npm 進行安裝
 ```shell
-npm install -D code-checker-j
+npm install @ren-joey/code-checker@latest
 ```
 2. 在根目錄建立一個檔案，命名為 code-checker.config.js，並將下列設定貼入其中
 ```js
