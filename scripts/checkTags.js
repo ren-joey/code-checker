@@ -55,11 +55,10 @@ module.exports = async function checkTags(config) {
             readline.clearLine(process.stdout);
             readline.cursorTo(process.stdout, 0);
             process.stdout.write(`[${
-                // (i + 1) / files.length * 100
                 Math.round((i + 1) / files.length * 100)
             }%] ` + chalk.gray(file));
 
-            await sleep(10);
+            // await sleep(10);
         }
 
         return true;

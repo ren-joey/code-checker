@@ -12,7 +12,8 @@ module.exports = function checkRules(config) {
         for (let i = 0; i < rules.length; i++) {
             const rule = rules[i];
 
-            if (eslintrc.rules[rule] !== 'error') {
+            if (eslintrc.rules[rule] !== 'error'
+                && eslintrc.rules[rule] !== 2) {
                 console.log(
                     chalk.red.bold(`❌ '${rule}': '${eslintrc.rules[rule]}' → `),
                     chalk.red(`it supposed to be 'error'.\n`),
