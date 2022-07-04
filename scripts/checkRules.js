@@ -2,7 +2,8 @@ const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
 
-module.exports = function checkRules(rules) {
+module.exports = function checkRules(config) {
+    const rules = config.error_rules;
     const lintPath = path.join(process.cwd(), '.eslintrc.js');
 
     if (fs.existsSync(lintPath)) {

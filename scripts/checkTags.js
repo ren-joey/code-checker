@@ -10,9 +10,12 @@ function sleep(ms) {
     });
 }
 
-module.exports = async function checkTags(tags) {
-    if (fs.existsSync('./src')) {
-        let files = await recursive('./src');
+module.exports = async function checkTags(config) {
+    const scanningRoot = config.tag_scanning_root;
+    const tags = config.invalid_tags;
+
+    if (fs.existsSync(scanningRoot)) {
+        let files = await recursive(scanningRoot);
         files = files.filter((file) => !isImage(file));
 
         for (let i = 0; i < files.length; i++) {

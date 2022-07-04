@@ -4,6 +4,7 @@ module.exports = {
         'no-unused-vars',
         'no-debugger'
     ],
+    tag_scanning_root: './src',
     invalid_tags: [
         '[DEV]',
         'todo',

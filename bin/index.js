@@ -12,10 +12,10 @@ const checkConfig = require('../scripts/checkConfig');
     const config = checkConfig();
 
     console.log(chalk.bold('\n🔍 Checking .eslintrc configuration:'));
-    const ruleRes = checkRule(config.error_rules);
+    const ruleRes = checkRule(config);
     if (ruleRes) console.log(chalk.green('✅ .eslintrc configuration correct.'));
 
     console.log(chalk.bold('\n🔍 Checking development tags:'));
-    const tagRes = await checkTags(config.invalid_tags);
+    const tagRes = await checkTags(config);
     if (tagRes) console.log(chalk.green('\n✅ No any invalid identifier was found\n'));
 })();
