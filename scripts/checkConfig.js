@@ -38,6 +38,10 @@ module.exports = function checkConfig() {
                 warningConsole(
                     chalk.yellow('⚠️ ', chalk.bold.underline('error_rules'), ' should be an array.')
                 );
+            } else if (!_config.tag_scanning_root) {
+                warningConsole(
+                    chalk.yellow('⚠️ ', chalk.bold.underline('tag_scanning_root'), ' wasn\'t exist.')
+                );
             } else if (!_config.invalid_tags) {
                 warningConsole(
                     chalk.yellow('❓ key ', chalk.bold.underline('invalid_tags'), ' wasn\'t exist.')
