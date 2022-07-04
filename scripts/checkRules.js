@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires, max-len */
 const chalk = require('chalk');
 const fs = require('fs');
 

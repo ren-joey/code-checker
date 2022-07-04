@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+#!/usr/bin/env node
 
-/**
- * 將 node 改為 production 模式
- */
 process.env.NODE_ENV = 'production';
 
 require('v8-compile-cache');
