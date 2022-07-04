@@ -29,6 +29,7 @@ module.exports = async function checkTags(config) {
                 for (let j = 0; j < tags.length; j++) {
                     const tag = tags[j];
                     if (line.indexOf(tag) !== -1) {
+                        // TODO: 改成可用正規表達式
                         console.log(
                             chalk.white('\n\nat '),
                             chalk.underline(file + `:${i+1}:${line.indexOf(tag)+1}\n`),
