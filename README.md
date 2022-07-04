@@ -10,7 +10,7 @@
 3. 你可以將 code-checker 設定在 github action 來確保 PR 被 merge 前都符合以上條件
 
 ## 如何安裝
-1. 在其的前端應用安裝
+1. 在前端應用透過 npm 進行安裝
 ```shell
 npm install -D code-checker-j
 ```
