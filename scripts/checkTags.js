@@ -17,6 +17,7 @@ module.exports = async function checkTags(config) {
     if (fs.existsSync(scanningRoot)) {
         let files = await recursive(scanningRoot);
         files = files.filter((file) => !isImage(file));
+        let anyError = false;
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
@@ -48,7 +49,8 @@ module.exports = async function checkTags(config) {
                                 )
                             )
                         );
-                        process.exit(1);
+
+                        anyError = true;
                     }
                 }
             }
@@ -61,6 +63,8 @@ module.exports = async function checkTags(config) {
 
             // await sleep(10);
         }
+
+        if (anyError) process.exit(1);
 
         return true;
     } else {

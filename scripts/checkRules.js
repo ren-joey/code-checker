@@ -8,6 +8,7 @@ module.exports = function checkRules(config) {
 
     if (fs.existsSync(lintPath)) {
         const eslintrc = require(lintPath);
+        let anyError = false;
 
         for (let i = 0; i < rules.length; i++) {
             const rule = rules[i];
@@ -22,9 +23,11 @@ module.exports = function checkRules(config) {
                         `'${rule}': process.env.NODE_ENV === 'production' ? 'error' : '${eslintrc.rules[rule]}'\n`
                     )
                 );
-                process.exit(1);
+                anyError = true;
             }
         }
+
+        if (anyError) process.exit(1);
 
         return true;
     } else {
