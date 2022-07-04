@@ -6,7 +6,7 @@
 
 ## code-checker-j 能做什麼
 1. 協助確認組織規定好的 eslint 規範是否在 production 模式被設定妥善，避免不應該出現的代碼被 build 出來。 **換句話說，應該要彈 error 的 rules 不能被關掉！**
-2. 檢查代碼中未被處理完成的 tag 或關鍵字，常見的有 `TODO` 或 `DEV`
+2. 檢查代碼中不允許出現在正式環境的 tag 或關鍵字，常見的有 `TODO`、`DEV`、`eslint-disable`
 3. 你可以將 code-checker 設定在 github action 來確保 PR 被 merge 前都符合以上條件
 
 ## 如何安裝
@@ -30,6 +30,7 @@ module.exports = {
     tag_scanning_root: './src',
 
     // 定義所有的非法關鍵字
+    // 備註：不支援正規表達式
     invalid_tags: [
         '[DEV]',
         'TODO:',
@@ -39,6 +40,7 @@ module.exports = {
         'ERROR:',
         'APPROVED:',
         'ANSWER:',
+        'eslint-disable',
         'var '
     ]
 };

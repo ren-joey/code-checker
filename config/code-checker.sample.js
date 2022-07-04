@@ -15,6 +15,7 @@ module.exports = {
         'ERROR:',
         'APPROVED:',
         'ANSWER:',
+        'eslint-disable',
         'var '
     ]
 };
