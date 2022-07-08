@@ -28,6 +28,9 @@
     "name": "@ren-joey/code-checker",
     "optionalDependencies": {},
     "peerDependencies": {},
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
     "scripts": {
         "test": "node ./bin/index"
     },

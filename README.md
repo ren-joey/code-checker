@@ -4,15 +4,30 @@
 1. 你正在開發 **前端應用** 且使用 **eslint** 進行代碼驗證
 2. 你有在使用至少一個以上的開發用註記，如 `TODO`
 
-## code-checker 能做什麼
+## 🍕 code-checker 能做什麼
 1. 協助確認組織規定好的 eslint 規範是否在 production 模式被設定妥善，避免不應該出現的代碼被 build 出來。 **換句話說，應該要彈 error 的 rules 不能被關掉！**
-2. 檢查代碼中不允許出現在正式環境的 tag 或關鍵字，常見的有 `TODO`、`DEV`、`eslint-disable`
-3. 你可以將 code-checker 設定在 github action 來確保 PR 被 merge 前都符合以上條件
+1. 檢查代碼中不允許出現在正式環境的 tag 或關鍵字，常見的有 `TODO`、`DEV`、`eslint-disable`
+1. 你可以將 code-checker 設定在 github action 來確保 PR 被 merge 前都符合以上條件
 
-## 如何安裝
+## 🔰 前置作業
+如果你想跳過這個步驟，可以使用發佈在 npm 的 [code-checker-j](https://www.npmjs.com/package/code-checker-j)
+1. 依照[官方教學](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)完成 github registry 註冊 （只需要完成 Authenticating to GitHub Packages 即可）。
+    如果 github registry 有安裝成功，執行下列指令你應該可以看到
+    ```shell
+    cat ~/.npmrc
+
+    # //npm.pkg.github.com/:_authToken=TOKEN
+    ```
+2. 在你的前端應用新增 `.npmrc` 檔案，並貼上以下內容
+    ```
+    registry=https://npm.pkg.github.com
+    ```
+    用以告訴 npm 你所要安裝的 package 來源包含 `https://npm.pkg.github.com`
+
+## 🚀 安裝
 1. 在前端應用透過 npm 進行安裝
 ```shell
-npm install @ren-joey/code-checker@latest
+npm install -D @ren-joey/code-checker@latest
 ```
 2. 在根目錄建立一個檔案，命名為 code-checker.config.js，並將下列設定貼入其中
 ```js
@@ -46,7 +61,7 @@ module.exports = {
 };
 ```
 
-## 如何執行
+## 🚩 執行
 開始進行代碼驗證
 ```shell
 npx code-checker
@@ -71,15 +86,15 @@ npx code-checker
 ```json
 {
     "scripts": {
-        "build:dev": "<your_build_script> build",
+        "build:dev": "DISABLE_ESLINT_PLUGIN=true <your_build_script> build",
         "build": "npm run lint && <your_build_script> build",
         "lint": "code-checker && NODE_ENV=production eslint ./src",
     }
 }
 ```
 設定說明
-- `"build:dev": "<your_build_script> build",`
-    - 保留原本的 `build` 方便測試環境使用
+- `"build:dev": "DISABLE_ESLINT_PLUGIN=true <your_build_script> build",`
+    - 保留原本的 `build` 並且關閉 eslint 驗證，方便測試環境使用
 - `"lint": "code-checker && NODE_ENV=production eslint ./src"`
     - 定義一個名為 `lint` 的 npm-script，先進行 eslint 設定檢查及關鍵字檢查，沒問題後才會再執行 `eslint`
 - `"build": "npm run lint && <your_build_script> build"`
@@ -121,13 +136,11 @@ npx code-checker
     }
 }
 ```
-
-## 執行
-單純進行驗證
+單純進行驗證，你可以輸入
 ```shell
 npm run lint
 ```
-驗證並打包
+如果要驗證並打包
 ```shell
 npm run build
 ```
