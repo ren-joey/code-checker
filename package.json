@@ -25,12 +25,9 @@
     ],
     "homepage": "https://github.com/ren-joey/code-checker-j#readme",
     "license": "MIT",
-    "name": "@ren-joey/code-checker",
+    "name": "code-checker-j",
     "optionalDependencies": {},
     "peerDependencies": {},
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
     "scripts": {
         "test": "node ./bin/index"
     },
